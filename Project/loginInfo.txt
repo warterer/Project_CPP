@@ -1,0 +1,2 @@
+admin admin_qwerty 1
+buyer buyer_qwerty 0

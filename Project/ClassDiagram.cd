@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Car">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEFAAAAAASAAAQAAAgAAAAAAAAAAAAAIAAAAAAoAAA=</HashCode>
+      <FileName>Car.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CarContainer">
+    <Position X="7.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQABAgQAAAAAAgAgAAAAAAAABAAQAAAAAAA=</HashCode>
+      <FileName>CarContainer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NewCar">
+    <Position X="5.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NewCar.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpecialVehicle">
+    <Position X="1" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIgAAAAAAAAABAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>SpecialVehicle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UsedCar">
+    <Position X="3.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAgCAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>UsedCar.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
