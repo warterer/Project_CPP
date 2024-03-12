@@ -45,7 +45,8 @@ public:
     void setSellerPhoneNumber(string sellerPhoneNumber);
     void setSellingLocation(string sellingLocation);
 
-    //Виртуальные абстрактные методы для сохранения, загрузки, вывода и редактирования авто
+    //Виртуальные абстрактные методы для сохранения, загрузки
+    //вывода и редактирования авто
     virtual void saveToFile(ofstream& file)const = 0;
     virtual void loadFromFile(ifstream& file) = 0;
     virtual void show()const = 0;
