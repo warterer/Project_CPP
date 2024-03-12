@@ -536,65 +536,79 @@ void CarContainer::show() const
 
 void CarContainer::saveToFile() const
 {
-    ofstream file("car_data.txt");
-    if (file.is_open())
+    try
     {
-        for (Car* car : cars)
+        ofstream file("car_data.txt");
+        if (file.is_open())
         {
-            file << car->type() << "\n";
-            car->saveToFile(file);
+            for (Car* car : cars)
+            {
+                file << car->type() << "\n";
+                car->saveToFile(file);
+            }
+            file.close();
+            cout << "Car data saved to file.\n";
         }
-        file.close();
-        cout << "Car data saved to file.\n";
+        else
+        {
+            throw new OpeningException();
+        }
     }
-    else
+    catch (const Exception* err)
     {
-        cout << "File opening error!\n";
+        cout << "Error: " << err->message() << endl;
     }
 }
 
 void CarContainer::loadFromFile()
 {
-    ifstream file("car_data.txt");
+    try {
+        ifstream file("car_data.txt");
 
-    if (file.is_open())
-    {
-        for (Car* car : cars)
+        if (file.is_open())
         {
-            delete car;
-        }
-        cars.clear();
+            for (Car* car : cars)
+            {
+                delete car;
+            }
+            cars.clear();
 
-        while (!file.eof())
-        {
-            string carType;
-            getline(file, carType);
-            if (carType == "Brand New Car")
+            while (!file.eof())
             {
-                NewCar* newCar = new NewCar();
-                newCar->loadFromFile(file);
-                addCar(newCar);
+                string carType;
+                getline(file, carType);
+                if (carType == "Brand New Car")
+                {
+                    NewCar* newCar = new NewCar();
+                    newCar->loadFromFile(file);
+                    addCar(newCar);
+                }
+                else if (carType == "Used Car")
+                {
+                    UsedCar* usedCar = new UsedCar();
+                    usedCar->loadFromFile(file);
+                    addCar(usedCar);
+                }
+                else if (carType == "Special Vehicle")
+                {
+                    SpecialVehicle* specialVehicle = new SpecialVehicle();
+                    specialVehicle->loadFromFile(file);
+                    addCar(specialVehicle);
+                }
             }
-            else if (carType == "Used Car")
-            {
-                UsedCar* usedCar = new UsedCar();
-                usedCar->loadFromFile(file);
-                addCar(usedCar);
-            }
-            else if (carType == "Special Vehicle")
-            {
-                SpecialVehicle* specialVehicle = new SpecialVehicle();
-                specialVehicle->loadFromFile(file);
-                addCar(specialVehicle);
-            }
+            file.close();
+            cout << "Car data loaded from file.\n";
         }
-        file.close();
-        cout << "Car data loaded from file.\n";
+        else
+        {
+            throw new OpeningException();
+        }
     }
-    else
+    catch (const Exception* err)
     {
-        cout << "File opening error!\n";
+        cout << "Error: " << err->message() << endl;
     }
+    
 }
 
 bool CarContainer::isEmpty() const
