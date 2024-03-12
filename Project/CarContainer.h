@@ -26,5 +26,6 @@ public:
     void show()const;
     void saveToFile()const;
     void loadFromFile();
+    bool isEmpty()const;
 };
 

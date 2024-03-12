@@ -85,6 +85,10 @@ int main()
             case 2:
             {
                 container.buyCar();
+                if (container.isEmpty())
+                {
+                    break;
+                }
                 container.saveToFile();
                 break;
             }

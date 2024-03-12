@@ -175,7 +175,8 @@ void CarContainer::editCar(int num)
         }
         if (num >= 0 && num < cars.size())
         {
-            cars[num]->edit();
+            cars[num-1]->edit();
+            saveToFile();
         }
         else
         {
@@ -589,4 +590,9 @@ void CarContainer::loadFromFile()
     {
         cout << "File opening error!\n";
     }
+}
+
+bool CarContainer::isEmpty() const
+{
+    return cars.empty();
 }
