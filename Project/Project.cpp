@@ -147,6 +147,11 @@ int main()
             case 1:
             {
                 container.buyCar();
+                if (container.isEmpty())
+                {
+                    break;
+                }
+                container.saveToFile();
                 break;
             }
             case 2:
