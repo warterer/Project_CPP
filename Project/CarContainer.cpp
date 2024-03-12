@@ -143,6 +143,7 @@ void CarContainer::buyCar()
     try {
         if (cars.empty())
         {
+            //Случай когда контейнер пустой
             throw new EmptyException();
         }
         int num;
@@ -156,6 +157,7 @@ void CarContainer::buyCar()
         }
         else
         {
+            //Некорректный ввод номера
             throw new InputException();
         }
     }
@@ -171,6 +173,7 @@ void CarContainer::editCar(int num)
     {
         if (cars.empty())
         {
+            //Случай когда контейнер пустой
             throw new EmptyException();
         }
         if (num >= 0 && num < cars.size())
@@ -180,6 +183,7 @@ void CarContainer::editCar(int num)
         }
         else
         {
+            //Некорректный ввод номера
             throw new InputException();
         }
     }
@@ -432,6 +436,7 @@ void CarContainer::sortCars()
     try {
         if (cars.empty())
         {
+            //Случай когда контейнер пустой
             throw new EmptyException();
         }
         int menu;

@@ -21,4 +21,4 @@ Anatoliy
 Kharkiv
 Lorry
 18000
-250x590
+250x600

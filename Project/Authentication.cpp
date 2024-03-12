@@ -1,11 +1,13 @@
-#include "Authentication.h"
+﻿#include "Authentication.h"
 
 Authentication::Authentication()
 {
+    //Данные загружаются из файла поэтому информация заккоментирована
     //users["admin"] = User("admin", "admin_qwerty", true);
     //users["buyer"] = User("buyer", "buyer_qwerty", false);
 }
 
+//Проверка есть ли пользователь с заданными логин, паролем
 bool Authentication::authenticateUser(string username, string password)
 {
     auto item = users.find(username);
@@ -16,6 +18,7 @@ bool Authentication::authenticateUser(string username, string password)
     return false;
 }
 
+//Геттер для User
 User Authentication::getUser(string username) const
 {
     auto item = users.find(username);
@@ -26,6 +29,7 @@ User Authentication::getUser(string username) const
     return User();
 }
 
+//Загрузка логин, пароля из файла
 void Authentication::loadFromFile()
 {
     ifstream file("loginInfo.txt");
